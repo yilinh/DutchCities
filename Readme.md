@@ -21,6 +21,5 @@ An example to visualize/animate Mesa models on a continuous canvas with Earth co
   
 * [DutchCities.csv](DutchCities.csv): The data of Dutch cities (population, lat, lon) used to generate city agents. 
   
-* [DutchCities.ipynb](DutchCities.ipynb): Tests the data in a Jupyter notebook.
 
 
