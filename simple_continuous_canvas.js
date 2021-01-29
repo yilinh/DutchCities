@@ -14,6 +14,7 @@ var ContinuousVisualization = function(height, width, context) {
 	};
 
 	this.drawCircle = function(x, y, radius, color, fill, text, text_color) {
+
 		var cx = x * width;
 		var cy = y * height;
 		var r = radius;
@@ -41,16 +42,20 @@ var ContinuousVisualization = function(height, width, context) {
 	};
 
 	this.drawRectange = function(x, y, w, h, color, fill, text, text_color) {
-		context.beginPath();
-		var dx = w * width;
-		var dy = h * height;
+
+		var cx = x * width;
+		var cy = y * height;
+		var dx = w;
+		var dy = h;
 
 		// Keep the drawing centered:
-		var x0 = (x * width) - 0.5 * dx;
-		var y0 = (y * height) - 0.5 * dy;
+		var x0 = cx - dx * 0.5;
+		var y0 = cy - dy * 0.5;
 
+		context.beginPath();
 		context.strokeStyle = color;
 		context.fillStyle = color;
+
 		if (fill)
 			context.fillRect(x0, y0, dx, dy);
 		else
@@ -58,12 +63,10 @@ var ContinuousVisualization = function(height, width, context) {
 
 		// This part draws the text inside the Rectangle
         if (text !== undefined) {
-//                var cx = (x + 0.5) * cellWidth;
-//                var cy = (y + 0.5) * cellHeight;
                 context.fillStyle = text_color;
                 context.textAlign = 'center';
                 context.textBaseline= 'middle';
-                context.fillText(text, x0, y0);
+                context.fillText(text, cx, cy);
         }
 	};
 

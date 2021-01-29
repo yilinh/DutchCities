@@ -5,10 +5,14 @@ from model import DutchCitiesModel
 
 
 def agent_portrayal(agent):
-    portrayal = {"Shape": "circle",
+    portrayal = {
+                 # "Shape": "rect",
+                 "Shape": "circle",
                  "Filled": "true",
                  "Color": "dodgerblue",
                  "r": max(agent.population / 100000 * 2, 2)
+                 # "w": max(agent.population / 100000 * 4, 4),
+                 # "h": max(agent.population / 100000 * 4, 4)
                  }
 
     if agent.name == 'Amsterdam':
