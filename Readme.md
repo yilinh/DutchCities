@@ -1,6 +1,8 @@
 # Dutch Cities
 An example to visualize/animate Mesa models on a continuous canvas with Earth coordinates. 
 
+![Demo](DutchCities.gif)
+
 ## How to Run
 * Launch the visualization
 ```
